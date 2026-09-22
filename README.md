@@ -11,7 +11,7 @@ The SDK is server-only. It rejects browser runtimes, never accepts a caller-supp
 
 ## Mobile integrations
 
-The server SDK intentionally remains server-only. Mobile apps must use the separate mobile client packages in `packages/mobile-core`, `packages/react-native`, and `packages/expo`; they call a customer-owned or Forge-hosted **mobile integration gateway**, never the Forge Developer API.
+The server SDK intentionally remains server-only. Mobile apps must use the separate mobile client packages in `packages/mobile-core`, `packages/react-native`, `packages/expo`, and `packages/capacitor`; they call a customer-owned or Forge-hosted **mobile integration gateway**, never the Forge Developer API.
 
 The gateway issues short-lived, audience-bound access tokens and accepts an opaque context assertion minted by a trusted backend after it verifies the signed-in user's authorization. Apps must not contain Forge Developer API keys or send authoritative account, tenant, portfolio, or similar resource IDs as agent context. The versioned gateway contract and replay fixtures live in [`arveniq-forge-protocol`](https://github.com/Arveniq-Labs/arveniq-forge-protocol).
 

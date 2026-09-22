@@ -47,8 +47,8 @@
     "build": "tsc -p tsconfig.json && node bin/make-cli-executable.js",
     "clean": "rm -rf dist",
     "test": "tsx --test test/*.test.ts",
-    "test:mobile": "tsx --test packages/mobile-core/test/*.test.ts",
-    "build:mobile": "npm run build --workspace=@arveniq/forge-mobile-core && npm run build --workspace=@arveniq/forge-react-native && npm run build --workspace=@arveniq/forge-expo",
+    "test:mobile": "tsx --test packages/mobile-core/test/*.test.ts packages/capacitor/test/*.test.ts",
+    "build:mobile": "npm run build --workspace=@arveniq/forge-mobile-core && npm run build --workspace=@arveniq/forge-react-native && npm run build --workspace=@arveniq/forge-expo && npm run build --workspace=@arveniq/forge-capacitor",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "typecheck:mobile": "npm run build:mobile",
     "prepare": "npm run build"
