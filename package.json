@@ -7,11 +7,11 @@
   "author": "Arveniq Labs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arveniq-Labs/arveniq-forge-sdk.git"
+    "url": "git+https://github.com/Arveniq-Labs/arveniq-forge-typescript.git"
   },
-  "homepage": "https://github.com/Arveniq-Labs/arveniq-forge-sdk#readme",
+  "homepage": "https://github.com/Arveniq-Labs/arveniq-forge-typescript#readme",
   "bugs": {
-    "url": "https://github.com/Arveniq-Labs/arveniq-forge-sdk/issues"
+    "url": "https://github.com/Arveniq-Labs/arveniq-forge-typescript/issues"
   },
   "keywords": [
     "arveniq",
