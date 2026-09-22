@@ -40,11 +40,17 @@
     "examples",
     "LICENSE"
   ],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json && node bin/make-cli-executable.js",
     "clean": "rm -rf dist",
     "test": "tsx --test test/*.test.ts",
+    "test:mobile": "tsx --test packages/mobile-core/test/*.test.ts",
+    "build:mobile": "npm run build --workspace=@arveniq/forge-mobile-core && npm run build --workspace=@arveniq/forge-react-native && npm run build --workspace=@arveniq/forge-expo",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck:mobile": "npm run build:mobile",
     "prepare": "npm run build"
   },
   "devDependencies": {

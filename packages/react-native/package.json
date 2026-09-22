@@ -1,0 +1,24 @@
+{
+  "name": "@arveniq/forge-react-native",
+  "version": "0.1.0",
+  "description": "React Native adapters for the mobile-safe Arveniq Forge integration client.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "dependencies": {
+    "@arveniq/forge-mobile-core": "0.1.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.73"
+  }
+}
