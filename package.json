@@ -51,7 +51,12 @@
     "build:mobile": "npm run build --workspace=@arveniq/forge-mobile-core && npm run build --workspace=@arveniq/forge-react-native && npm run build --workspace=@arveniq/forge-expo && npm run build --workspace=@arveniq/forge-capacitor",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "typecheck:mobile": "npm run build:mobile",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "build:sap": "npm run build --workspace=@arveniq/forge-sapui5",
+    "test:sap": "npm run test --workspace=@arveniq/forge-sapui5",
+    "typecheck:sap": "npm run typecheck --workspace=@arveniq/forge-sapui5",
+    "start:sap": "npm start --prefix packages/sapui5/examples/fiori",
+    "demo:sap": "npm run start:demo --workspace=@arveniq/forge-sapui5"
   },
   "devDependencies": {
     "@types/node": "^26.0.1",

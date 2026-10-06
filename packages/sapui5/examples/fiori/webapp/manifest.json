@@ -1,0 +1,20 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "arveniq.forge.sample", "type": "application",
+    "applicationVersion": { "version": "0.1.0" },
+    "title": "Ask Forge AI", "description": "Forge AI assistant for SAP Fiori",
+    "dataSources": { "chatGateway": { "uri": "api/forge-chat", "type": "JSON" } },
+    "crossNavigation": { "inbounds": { "AskPingLead-chat": {
+      "semanticObject": "AskPingLead", "action": "chat", "title": "Ask Forge AI",
+      "icon": "sap-icon://discussion", "signature": { "parameters": {}, "additionalParameters": "allowed" }
+    } } }
+  },
+  "sap.ui": { "technology": "UI5", "deviceTypes": { "desktop": true, "tablet": true, "phone": true } },
+  "sap.ui5": { "resourceRoots": { "arveniq.forge.sapui5": "./resources/arveniq/forge/sapui5" },
+    "dependencies": { "minUI5Version": "1.120.0", "libs": {
+    "sap.ui.core": {}, "sap.m": {}, "arveniq.forge.sapui5": {}
+  } } },
+  "sap.cloud": { "service": "arveniq.forge.chat" },
+  "sap.fiori": { "registrationIds": [], "archeType": "transactional" }
+}

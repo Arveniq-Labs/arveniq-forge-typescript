@@ -1,0 +1,8 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "route",
+  "routes": [
+    { "source": "^/api/forge-chat/(.*)$", "target": "/api/forge-chat/$1", "destination": "ForgeChatGateway", "authenticationType": "xsuaa", "scope": "$XSAPPNAME.Chat", "csrfProtection": true },
+    { "source": "^(.*)$", "target": "$1", "service": "html5-apps-repo-rt", "authenticationType": "xsuaa" }
+  ]
+}

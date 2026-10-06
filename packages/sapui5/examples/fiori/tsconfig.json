@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ES2022", "moduleResolution": "Bundler",
+    "strict": true, "skipLibCheck": true, "types": ["@sapui5/types"],
+    "paths": { "arveniq/forge/sapui5/*": ["../../dist/esm/*"] }
+  },
+  "include": ["webapp/**/*.ts"]
+}

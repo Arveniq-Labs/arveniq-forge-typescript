@@ -1,0 +1,5 @@
+{
+  "xsappname": "arveniq-forge-chat", "tenant-mode": "dedicated",
+  "scopes": [{ "name": "$XSAPPNAME.Chat", "description": "Use Forge chat" }],
+  "role-templates": [{ "name": "ChatUser", "description": "Use Forge chat", "scope-references": ["$XSAPPNAME.Chat"] }]
+}

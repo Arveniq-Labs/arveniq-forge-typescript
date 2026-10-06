@@ -15,6 +15,18 @@ The server SDK intentionally remains server-only. Mobile apps must use the separ
 
 The gateway issues short-lived, audience-bound access tokens and accepts an opaque context assertion minted by a trusted backend after it verifies the signed-in user's authorization. Apps must not contain Forge Developer API keys or send authoritative account, tenant, portfolio, or similar resource IDs as agent context. The versioned gateway contract and replay fixtures live in [`arveniq-forge-protocol`](https://github.com/Arveniq-Labs/arveniq-forge-protocol).
 
+## SAPUI5 / Fiori integrations
+
+[`@arveniq/forge-sapui5`](packages/sapui5/README.md) includes a reusable SAPUI5 chat
+panel, full-page layout, JSONModel adapter, browser client, authenticated Node/CAP
+gateway relay, and Fiori Launchpad sample. Run `npm run build:sap` and
+`npm run test:sap` to build and verify it. Start `npm run demo:sap` and
+`npm run start:sap` in separate terminals for the synthetic local preview.
+
+The SAPUI5 browser package calls the host's same-origin gateway. This server SDK
+and the Forge Developer API key remain on the backend. Default relay support is
+text chat; uploads and approval workflows are host-provided extensions.
+
 ## Install
 
 ```bash

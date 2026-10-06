@@ -1,0 +1,170 @@
+.forgeChatPanel {
+  background: var(--sapBackgroundColor);
+  min-height: 0;
+  overflow: hidden;
+}
+.forgeChatSidebar {
+  flex-shrink: 0;
+  background: var(--sapGroup_ContentBackground);
+  border-right: 1px solid var(--sapGroup_ContentBorderColor);
+  padding: 1.25rem 1rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+.forgeChatSidebarBrand { gap: 0.65rem; padding: 0.35rem 0.25rem 0.65rem; }
+.forgeChatSidebarBrand .sapUiIcon { color: var(--sapBrandColor); font-size: 1.25rem; }
+.forgeChatSidebarBrand .sapMText { font-size: 1rem; font-weight: 700; }
+.forgeChatHistoryTitle { font-size: 0.8rem; color: var(--sapContent_LabelColor); margin: 0.75rem 0.4rem 0; }
+.forgeChatHistoryPane { gap: 0.75rem; padding: 0.15rem; box-sizing: border-box; min-height: 0; }
+.forgeChatHistory, .forgeChatHistory .sapMLIB { background: transparent; }
+.forgeChatHistory .sapMLIB { border: 0; border-radius: 0.65rem; margin: 0.2rem 0; }
+.forgeChatHistory .sapMLIBSelected { background: var(--sapList_SelectionBackgroundColor); }
+.forgeChatHistory .sapMLIB[data-current="true"] { background: var(--sapList_SelectionBackgroundColor); }
+.forgeChatHistory .sapMLIB:hover { background: var(--sapList_Hover_Background); }
+.forgeChatHistory .sapMSLI { height: auto; min-height: 4.25rem; padding: 0.65rem; box-sizing: border-box; }
+.forgeChatHistory .sapMSLIImgIcon { color: var(--sapContent_LabelColor); font-size: 1rem; }
+.forgeChatHistory .sapMSLITitle { font-size: 0.875rem; padding-bottom: 0.35rem; }
+.forgeChatHistory .sapMSLIDescription { font-size: 0.75rem; color: var(--sapContent_LabelColor); }
+.forgeChatContent { min-height: 0; box-sizing: border-box; }
+.forgeChatHeader.sapMTB { height: 4.5rem; padding: 0 1.5rem; flex-shrink: 0; background: var(--sapGroup_ContentBackground); }
+.forgeChatHeaderIcon { font-size: 1.4rem; color: var(--sapBrandColor); margin-right: 0.65rem; }
+.forgeChatHeader .sapMTitle { font-size: 1rem; font-weight: 700; }
+.forgeChatSubtitle { color: var(--sapContent_LabelColor); font-size: 0.75rem; padding-top: 0.15rem; }
+.forgeChatHistoryButton, .forgeChatHeaderNewChat { display: none; }
+.forgeChatTranscript { min-height: 0; overscroll-behavior: contain; scroll-padding-bottom: 1rem; }
+.forgeChatTranscript > .sapMScrollContScroll { min-height: 100%; display: flex; flex-direction: column; }
+.forgeChatWelcome { flex: 1; padding: 3rem 1.5rem; gap: 1rem; box-sizing: border-box; }
+.forgeChatWelcomeIcon {
+  font-size: 2rem;
+  color: var(--sapBrandColor);
+  background: var(--sapList_SelectionBackgroundColor);
+  padding: 1.4rem;
+  border-radius: 1.4rem;
+  margin-bottom: 0.65rem;
+}
+.forgeChatWelcomeTitle { font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.3; font-weight: 700; letter-spacing: -0.04rem; }
+.forgeChatWelcomeDetail { max-width: 28rem; line-height: 1.6; color: var(--sapContent_LabelColor); }
+.forgeChatSuggestionsLabel { color: var(--sapContent_LabelColor); font-size: 0.75rem; margin-top: 1.1rem; }
+.forgeChatSuggestions { gap: 0.75rem; max-width: 42rem; width: 100%; }
+.forgeChatSuggestions > .sapMFlexItem { flex: 1 1 11rem; min-width: 0; }
+.forgeChatSuggestion { height: auto; padding: 0; }
+.forgeChatSuggestion .sapMBtnInner {
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  height: auto; min-height: 6.75rem; padding: 1rem; text-align: left;
+  border: 1px solid var(--sapGroup_ContentBorderColor); border-radius: 0.85rem;
+  background: var(--sapGroup_ContentBackground); box-sizing: border-box;
+}
+.forgeChatSuggestion .sapMBtnIcon { position: static; float: none; margin: 0 0 0.5rem; width: auto; color: var(--sapBrandColor); }
+.forgeChatSuggestion .sapMBtnContent { white-space: normal; line-height: 1.45; font-weight: 400; color: var(--sapTextColor); padding: 0; }
+.forgeChatSuggestion:hover .sapMBtnInner { border-color: var(--sapBrandColor); background: var(--sapList_Hover_Background); }
+.forgeChatMessages { max-width: 52rem; width: 100%; align-self: center; padding: 1.5rem; box-sizing: border-box; background: transparent; }
+.forgeChatMessages .sapMLIB { background: transparent; border: 0; }
+.forgeChatMessage { margin: 0.45rem 0 1.5rem; padding: 1rem 1.25rem; border-radius: 1rem; gap: 0.65rem; box-sizing: border-box; }
+.forgeChatAssistant { background: var(--sapGroup_ContentBackground); border: 1px solid var(--sapGroup_ContentBorderColor); }
+.forgeChatUser { background: var(--sapList_SelectionBackgroundColor); margin-left: auto; max-width: 85%; width: fit-content; }
+.forgeChatMessageHeader { min-height: 2rem; gap: 1rem; }
+.forgeChatMessageHeader > .sapMFlexItem { min-width: 0; }
+.forgeChatMessageHeader .sapMHBox { gap: 0.5rem; }
+.forgeChatAvatar { color: var(--sapBrandColor); font-size: 0.9rem; }
+.forgeChatSpeaker { font-weight: 700; color: var(--sapTextColor); font-size: 0.8rem; }
+.forgeChatMessage .sapMText, .forgeChatMessage .sapMFT { line-height: 1.65; overflow-wrap: anywhere; }
+.forgeChatMessage .sapMFT { font-size: 0.9375rem; }
+.forgeChatStatus, .forgeChatActivity { font-size: var(--sapFontSmallSize); color: var(--sapContent_LabelColor); }
+.forgeChatMessage pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: 0.9rem; border-radius: 0.6rem; background: var(--sapBackgroundColor); font-size: 0.8rem; line-height: 1.6; }
+.forgeChatMessage code { background: var(--sapBackgroundColor); border-radius: 0.25rem; padding: 0.1rem 0.3rem; }
+.forgeChatSources { gap: 0.5rem; font-size: 0.8rem; border-top: 1px solid var(--sapGroup_ContentBorderColor); padding-top: 0.75rem; }
+.forgeChatFooter { padding: 0.4rem 1.5rem 1rem; gap: 0.5rem; flex-shrink: 0; box-sizing: border-box; }
+.forgeChatFooter > .sapMFlexItem { width: 100%; max-width: 49rem; min-width: 0; }
+.forgeChatFooter > .sapMFlexItem:has(.forgeChatLatest) { width: auto; }
+.forgeChatApproval { gap: 0.5rem; }
+.forgeChatComposer { border: 1px solid var(--sapField_BorderColor); border-radius: 1rem; background: var(--sapField_Background); padding: 0.5rem 0.65rem; box-sizing: border-box; box-shadow: 0 0.2rem 0.75rem rgba(0, 0, 0, 0.035); }
+.forgeChatComposer:focus-within { border-color: var(--sapField_Focus_BorderColor); box-shadow: 0 0 0 1px var(--sapField_Focus_BorderColor); }
+.forgeChatPanel .forgeChatComposer .forgeChatInput .sapMInputBaseContentWrapper { border: 0; background: transparent; box-shadow: none; }
+.forgeChatPanel .forgeChatComposer .forgeChatInput .sapMInputBaseContentWrapper::before { border: 0; }
+.forgeChatInput .sapMInputBaseInner { padding: 0.5rem; background: transparent; line-height: 1.5; }
+.forgeChatInput .sapMInputBaseInner::placeholder { font-style: normal; }
+.forgeChatComposerToolbar.sapMTB { border: 0; background: transparent; padding: 0 0.15rem; }
+.forgeChatKeyboardHint { font-size: 0.7rem; color: var(--sapContent_LabelColor); }
+.forgeChatFooterNote { font-size: 0.7rem; color: var(--sapContent_LabelColor); }
+.forgeChatAttachments { gap: 0.35rem; }
+@media (max-width: 64rem) { .forgeChatKeyboardHint { display: none; } }
+@media (max-width: 48rem) {
+  .forgeChatSidebar { display: none; }
+  .forgeChatHistoryButton, .forgeChatHeaderNewChat { display: inline-block; }
+  .forgeChatHeader.sapMTB { height: 4rem; padding: 0 0.75rem; }
+  .forgeChatHeaderIcon { display: none; }
+  .forgeChatWelcome { padding: 1.5rem 1rem; }
+  .forgeChatWelcomeIcon { font-size: 1.5rem; padding: 1rem; margin-bottom: 0; }
+  .forgeChatWelcomeDetail { font-size: 0.875rem; }
+  .forgeChatSuggestions { gap: 0.5rem; }
+  /* Override the desktop basis emitted inline by UI5 FlexItemData. */
+  .forgeChatSuggestions > .sapMFlexItem { flex-basis: 100% !important; }
+  .forgeChatSuggestion .sapMBtnInner { flex-direction: row; justify-content: flex-start; align-items: center; min-height: 3.25rem; padding: 0.65rem 1rem; gap: 0.75rem; }
+  .forgeChatSuggestion .sapMBtnIcon { margin: 0; flex-shrink: 0; }
+  .forgeChatMessages { padding: 0.75rem; }
+  .forgeChatMessage { padding: 0.75rem 1rem; margin-bottom: 1rem; }
+  .forgeChatUser { max-width: 92%; }
+  .forgeChatFooter { padding: 0.35rem 0.75rem 0.75rem; }
+  .forgeChatFooterNote { font-size: 0.65rem; }
+}
+@media (prefers-reduced-motion: reduce) { .forgeChatPanel * { scroll-behavior: auto; } }
+
+/* Keep rich responses constrained to the bubble; wide data scrolls within its own region. */
+.forgeChatMessage > .sapMFlexItem { min-width: 0; max-width: 100%; }
+.forgeChatMarkdown { min-width: 0; max-width: 100%; font-size: 0.9375rem; line-height: 1.65; overflow-wrap: anywhere; }
+.forgeChatMarkdown p { margin: 0 0 1rem; }
+.forgeChatMarkdown > :last-child { margin-bottom: 0; }
+.forgeChatMarkdown h1, .forgeChatMarkdown h2, .forgeChatMarkdown h3 { line-height: 1.4; margin: 1.4rem 0 0.75rem; }
+.forgeChatMarkdown h1 { font-size: 1.4rem; }
+.forgeChatMarkdown h2 { font-size: 1.2rem; }
+.forgeChatMarkdown h3 { font-size: 1.05rem; }
+.forgeChatMarkdown h4, .forgeChatMarkdown h5, .forgeChatMarkdown h6 { font-size: 0.95rem; margin: 1rem 0 0.5rem; }
+.forgeChatMarkdown > :first-child { margin-top: 0; }
+.forgeChatMarkdown ul, .forgeChatMarkdown ol { padding-left: 1.6rem; margin: 0.5rem 0 1rem; }
+.forgeChatMarkdown li { padding-left: 0.2rem; margin: 0.35rem 0; }
+.forgeChatMarkdown blockquote { margin: 1rem 0; padding: 0.6rem 1rem; border-left: 3px solid var(--sapBrandColor); background: var(--sapBackgroundColor); color: var(--sapContent_LabelColor); }
+.forgeChatMarkdown blockquote p:last-child { margin-bottom: 0; }
+.forgeChatMarkdown a { color: var(--sapLinkColor); text-underline-offset: 0.15rem; }
+.forgeChatMarkdown hr { border: 0; border-top: 1px solid var(--sapGroup_ContentBorderColor); margin: 1.25rem 0; }
+.forgeChatMarkdown pre { max-width: 100%; box-sizing: border-box; overflow-x: auto; white-space: pre; overflow-wrap: normal; }
+.forgeChatMarkdown pre code { background: transparent; padding: 0; }
+.forgeMarkdownTable { margin: 1.25rem 0; }
+.forgeMarkdownTableHint { font-size: 0.75rem; color: var(--sapContent_LabelColor); margin: 0 0 0.5rem !important; }
+.forgeMarkdownTableScroll { overflow-x: auto; max-width: 100%; min-width: 0; border: 1px solid var(--sapGroup_ContentBorderColor); border-radius: 0.65rem; overscroll-behavior-x: contain; }
+.forgeMarkdownTableScroll, .forgeChartPlot { scrollbar-width: none; }
+.forgeMarkdownTableScroll::-webkit-scrollbar, .forgeChartPlot::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.forgeMarkdownTableScroll:focus-visible, .forgeChartPlot:focus-visible { outline: 2px solid var(--sapContent_FocusColor); outline-offset: 2px; }
+.forgeMarkdownTableScroll table { border-collapse: separate; border-spacing: 0; width: max-content; min-width: 100%; table-layout: auto; font-size: 0.875rem; }
+.forgeMarkdownTableScroll th, .forgeMarkdownTableScroll td { min-width: 10rem; max-width: 28rem; padding: 0.9rem 1.25rem; text-align: left; vertical-align: top; line-height: 1.65; white-space: normal; overflow-wrap: normal; word-break: normal; border-bottom: 1px solid var(--sapGroup_ContentBorderColor); border-right: 1px solid var(--sapGroup_ContentBorderColor); }
+.forgeMarkdownTableScroll th { font-weight: 700; }
+.forgeMarkdownTableScroll thead th { background: var(--sapList_HeaderBackground); }
+.forgeMarkdownTableScroll tbody tr:nth-child(even) { background: var(--sapBackgroundColor); }
+.forgeMarkdownTableScroll tr > :last-child { border-right: 0; }
+.forgeMarkdownTableScroll tbody tr:last-child > * { border-bottom: 0; }
+.forgeMarkdownTableScroll p { margin: 0; }
+.forgeChart { margin: 1.25rem 0; padding: 1rem; border: 1px solid var(--sapGroup_ContentBorderColor); border-radius: 0.75rem; box-sizing: border-box; max-width: 100%; }
+.forgeChart figcaption { font-weight: 700; margin-bottom: 0.75rem; }
+.forgeChartPlot { overflow-x: auto; max-width: 100%; }
+.forgeChart svg { display: block; width: 100%; min-width: 26rem; height: auto; }
+.forgeChart svg text { fill: var(--sapTextColor); font-family: var(--sapFontFamily); font-size: 16px; }
+.forgeChartGrid { stroke: var(--sapGroup_ContentBorderColor); stroke-width: 1; }
+.forgeChartAxis { stroke: var(--sapContent_LabelColor); stroke-width: 1; }
+.forgeChartDonutHole { fill: var(--sapGroup_ContentBackground); }
+.forgeChart svg .forgeChartTotal { font-size: 26px; font-weight: 700; }
+.forgeChartLegend { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin: 0.5rem 0 1rem; font-size: 0.8rem; }
+.forgeChartLegendItem { display: inline-flex; align-items: center; gap: 0.4rem; }
+.forgeChartLegendItem i { display: inline-block; width: 0.65rem; height: 0.65rem; flex-shrink: 0; border-radius: 0.2rem; }
+.forgeChart summary { cursor: pointer; color: var(--sapLinkColor); font-size: 0.8rem; }
+.forgeChart details[open] summary { margin-bottom: 0.75rem; }
+.forgeChartError, .forgeChartPending { padding: 0.75rem; background: var(--sapBackgroundColor); border-radius: 0.5rem; color: var(--sapContent_LabelColor); font-size: 0.85rem; }
+.forgeChatHistoryRow { padding: 0.9rem 0.7rem; gap: 0.35rem; }
+.forgeChatHistoryRow > .sapMFlexItem { min-width: 0; max-width: 100%; }
+.forgeChatHistoryName { font-weight: 600; font-size: 0.85rem; }
+.forgeChatHistoryName { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; line-height: 1.45; }
+.forgeChatHistoryMeta { font-size: 0.7rem; color: var(--sapContent_LabelColor); }
+.forgeChatHistorySnippet { font-size: 0.75rem; color: var(--sapContent_LabelColor); }
+.forgeChatHistorySnippet { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; line-height: 1.5; }
+.forgeChatSearchText { overflow-wrap: anywhere; }
+.forgeChatSearchText mark { background: var(--sapList_SelectionBackgroundColor); color: var(--sapTextColor); font-weight: 700; border-radius: 0.15rem; }
+.forgeChatSearchStatus { font-size: 0.65rem; line-height: 1.4; color: var(--sapContent_LabelColor); padding: 0 0.3rem; }
+.forgeChatSearchTarget .forgeChatMessage { border: 2px solid var(--sapBrandColor); }

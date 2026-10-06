@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+  <name>arveniq.forge.sapui5</name><vendor>Arveniq</vendor><version>0.1.0</version>
+  <documentation>Reusable Forge chat UI and model adapter for SAPUI5.</documentation>
+  <dependencies><dependency><libraryName>sap.ui.core</libraryName></dependency><dependency><libraryName>sap.m</libraryName></dependency></dependencies>
+</library>

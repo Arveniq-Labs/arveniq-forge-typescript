@@ -1,0 +1,66 @@
+{
+  "name": "@arveniq/forge-sapui5",
+  "version": "0.1.0",
+  "description": "SAPUI5 chat UI and authenticated application gateway integration for Arveniq Forge.",
+  "type": "module",
+  "types": "./dist/esm/index.d.ts",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js"
+    },
+    "./ui5": {
+      "types": "./dist/esm/ui5.d.ts",
+      "import": "./dist/esm/ui5.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/esm",
+    "dist/server",
+    "dist/ui5/resources/arveniq",
+    "src",
+    "server",
+    "bin",
+    "tsconfig.json",
+    "tsconfig.server.json",
+    "ui5.yaml",
+    "README.md",
+    "LICENSE",
+    "examples/gateway/*.ts",
+    "examples/fiori/webapp",
+    "examples/fiori/package.json",
+    "examples/fiori/package-lock.json",
+    "examples/fiori/tsconfig.json",
+    "examples/fiori/ui5*.yaml",
+    "examples/fiori/xs-security.json",
+    "examples/fiori/mta.yaml",
+    "examples/fiori/DEPLOYMENT.md",
+    "THIRD_PARTY_NOTICES.txt"
+  ],
+  "dependencies": {
+    "@arveniq/forge-sdk": "0.3.0",
+    "markdown-it": "15.0.2"
+  },
+  "devDependencies": {
+    "@sapui5/types": "1.136.0",
+    "@ui5/cli": "4.0.70",
+    "ui5-tooling-modules": "3.39.0",
+    "ui5-tooling-transpile": "3.13.1"
+  },
+  "scripts": {
+    "build": "npm run build:types && ui5 build --clean-dest --dest dist/ui5",
+    "build:types": "tsc -p tsconfig.json && node bin/esm-imports.mjs && tsc -p tsconfig.server.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "test": "tsx --test tests/*.test.ts",
+    "start:demo": "tsx examples/gateway/demo.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

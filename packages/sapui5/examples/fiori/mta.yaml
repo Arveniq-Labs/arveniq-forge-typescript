@@ -1,0 +1,79 @@
+_schema-version: "3.3"
+ID: arveniq-forge-chat
+version: 0.1.0
+modules:
+  - name: forge-sapui5-destinations
+    type: com.sap.application.content
+    requires:
+      - name: forge-sapui5-destination
+        parameters:
+          content-target: true
+      - name: forge-sapui5-html5-host
+        parameters:
+          service-key:
+            name: forge-sapui5-html5-key
+      - name: forge-sapui5-xsuaa
+        parameters:
+          service-key:
+            name: forge-sapui5-uaa-key
+    parameters:
+      content:
+        instance:
+          existing_destinations_policy: update
+          destinations:
+            - Name: arveniq_forge_chat_html5_repo
+              ServiceInstanceName: forge-sapui5-html5-host
+              ServiceKeyName: forge-sapui5-html5-key
+              sap.cloud.service: arveniq.forge.chat
+            - Name: arveniq_forge_chat_uaa
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: forge-sapui5-xsuaa
+              ServiceKeyName: forge-sapui5-uaa-key
+              sap.cloud.service: arveniq.forge.chat
+    build-parameters:
+      no-source: true
+  - name: forge-sapui5-ui
+    type: html5
+    path: .
+    build-parameters:
+      builder: custom
+      commands:
+        - npm ci
+        - npm run build
+      build-result: dist
+      supported-platforms: []
+  - name: forge-sapui5-content
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: forge-sapui5-html5-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - name: forge-sapui5-ui
+          artifacts:
+            - forge-sapui5-ui.zip
+          target-path: resources/
+resources:
+  - name: forge-sapui5-html5-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-name: forge-sapui5-html5-host
+      service: html5-apps-repo
+      service-plan: app-host
+  - name: forge-sapui5-xsuaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service-name: forge-sapui5-xsuaa
+      service: xsuaa
+      service-plan: application
+      path: xs-security.json
+  - name: forge-sapui5-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      config:
+        HTML5Runtime_enabled: true
